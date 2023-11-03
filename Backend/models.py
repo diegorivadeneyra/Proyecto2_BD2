@@ -16,28 +16,30 @@ def setup_db(app, database_path=database_path):
     with app.app_context():
         db.create_all()
 
-#Modelos para la BD
+#Modelos para la BD-fashion
 class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.Text,nullable = False)
-    publication = db.Column(db.Text,nullable = False)
-    author = db.Column(db.Text, nullable = False)
-    date = db.Column(db.Text,nullable = False)
-    year = db.Column(db.Float,nullable = False)
-    month = db.Column(db.Float,nullable = False)
-    content = db.Column(db.Text,nullable = False)
+    gender = db.Column(db.Text,nullable = False)
+    masterCategory = db.Column(db.Text,nullable = False)
+    subCategory = db.Column(db.Text, nullable = False)
+    articleType = db.Column(db.Text,nullable = False)
+    baseColour = db.Column(db.Text,nullable = False)
+    season = db.Column(db.Text,nullable = False)
+    year = db.Column(db.Integer,nullable = False)
+    usage = db.Column(db.Text,nullable = False)
 
     def format(self):
         return {
             'id':self.id,
-            'title':self.title,
-            'publication':self.publication,
-            'author':self.author,
-            'date':self.date,
+            'gender':self.gender,
+            'masterCategory':self.masterCategory,
+            'subCategory':self.subCategory,
+            'articleType':self.articleType,
+            'baseColour':self.baseColour,
+            'season':self.season,
             'year':self.year,
-            'month':self.month,
-            'content':self.content
+            'usage':self.usage
         }
 
     #Metodo que permite la inserción de un post a través de nuestra API
