@@ -12,7 +12,7 @@ stemmer = SnowballStemmer("english")
 archivo = open("./stopwords.txt", "r", encoding="utf-8")
 contenido = archivo.read()
 stoplist = contenido.split()
-noticias = []
+ropa = []
 filtro = []
 for x in range(97, 123):
     filtro.append(chr(x))
@@ -75,5 +75,5 @@ def preprocesamiento(texto):
         
 
 
-preprocesamiento(noticias)
+preprocesamiento(ropa)
 
