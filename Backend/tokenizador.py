@@ -40,9 +40,9 @@ def preprocesamiento(texto):
     i = 0
     index = 0
    #tokenizacion
-    for noticia in texto:
+    for ropa in texto:
         cant = 0
-        for letra in noticia:
+        for letra in ropa:
             letra = letra.lower()
             if letra != "":
                 if letra in filtro:
